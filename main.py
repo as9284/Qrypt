@@ -29,39 +29,41 @@ def main(page: ft.Page):
         page.window.close()
 
     title_bar = ft.Container(
-        content=ft.Row(
-            controls=[
-                ft.Text(
-                    "Qrypt",
-                    weight=ft.FontWeight.BOLD,
-                    size=20,
-                    color=ft.Colors.WHITE,
-                ),
-                ft.Container(expand=True),
-                ft.IconButton(
-                    icon=ft.Icons.MINIMIZE,
-                    icon_color=ft.Colors.WHITE,
-                    tooltip="Minimize",
-                    on_click=on_minimize_click,
-                    style=ft.ButtonStyle(
-                        shape=ft.RoundedRectangleBorder(radius=4),
-                        overlay_color=ft.Colors.with_opacity(0.2, ft.Colors.WHITE),
+        content=ft.WindowDragArea(
+            content=ft.Row(
+                controls=[
+                    ft.Text(
+                        "Qrypt",
+                        weight=ft.FontWeight.BOLD,
+                        size=20,
+                        color=ft.Colors.WHITE,
                     ),
-                ),
-                ft.IconButton(
-                    icon=ft.Icons.CLOSE,
-                    icon_color=ft.Colors.WHITE,
-                    tooltip="Close",
-                    on_click=on_close_click,
-                    style=ft.ButtonStyle(
-                        shape=ft.RoundedRectangleBorder(radius=4),
-                        overlay_color=ft.Colors.with_opacity(0.2, ft.Colors.WHITE),
+                    ft.Container(expand=True),
+                    ft.IconButton(
+                        icon=ft.Icons.MINIMIZE,
+                        icon_color=ft.Colors.WHITE,
+                        tooltip="Minimize",
+                        on_click=on_minimize_click,
+                        style=ft.ButtonStyle(
+                            shape=ft.RoundedRectangleBorder(radius=4),
+                            overlay_color=ft.Colors.with_opacity(0.2, ft.Colors.WHITE),
+                        ),
                     ),
-                ),
-            ],
-            alignment=ft.MainAxisAlignment.START,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-            spacing=5,
+                    ft.IconButton(
+                        icon=ft.Icons.CLOSE,
+                        icon_color=ft.Colors.WHITE,
+                        tooltip="Close",
+                        on_click=on_close_click,
+                        style=ft.ButtonStyle(
+                            shape=ft.RoundedRectangleBorder(radius=4),
+                            overlay_color=ft.Colors.with_opacity(0.2, ft.Colors.WHITE),
+                        ),
+                    ),
+                ],
+                alignment=ft.MainAxisAlignment.START,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                spacing=5,
+            )
         ),
         padding=ft.padding.symmetric(horizontal=10),
         bgcolor=ft.Colors.BLACK,
